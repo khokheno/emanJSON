@@ -10,7 +10,10 @@
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var myObj = JSON.parse(xhttp.response);
-                    document.getElementById("demo").innerHTML = myObj.AR.code;
+                    if (lang == EN)
+                        document.getElementById("demo").innerHTML = myObj.EN.code;
+                    else
+                        document.getElementById("demo").innerHTML = "NONE";
 
 
                 }
@@ -20,84 +23,18 @@
         }
     </script>
     <title>Json Test</title>
-    <style>
-        html,
-        body {
-            width: auto;
-            height: auto;
-            font-size: 20px;
-        }
-        
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 5fr 1fr 1fr 1fr 1fr 1fr 1fr;
-            grid-gap: 10px;
-        }
-        
-        .button1 {
-            text-align: center;
-            box-sizing: border-box;
-            background-color: gray;
-            grid-column-start: 2;
-            grid-row-start: 2;
-            cursor: pointer;
-        }
-        
-        .button2 {
-            text-align: center;
-            background-color: gray;
-            grid-column-start: 2;
-            grid-row-start: 3;
-            cursor: pointer;
-        }
-        
-        .button3 {
-            text-align: center;
-            background-color: gray;
-            grid-column-start: 2;
-            grid-row-start: 4;
-            cursor: pointer;
-        }
-        
-        .button4 {
-            text-align: center;
-            background-color: gray;
-            grid-column-start: 2;
-            grid-row-start: 5;
-            cursor: pointer;
-        }
-        
-        .back {
-            text-align: center;
-            background-color: gray;
-            grid-column-start: 2;
-            grid-row-start: 6;
-            cursor: pointer;
-        }
-        
-        .space {
-            grid-column-start: 2;
-            grid-row-start: 7;
-        }
-        
-        @media only screen and (max-width: 600px) {
-            body {
-                background-color: lightblue;
-                font-size: 1em;
-            }
-        }
-    </style>
+
 </head>
 
 <body>
 
     <h1>This is a Test</h1>
     <div class="container">
-        <div class=button1 onclick="getData('EN')">English</div>
-        <div class=button2 onclick="getData('HE')">עברית </div>
-        <div class=button3 onclick="getData('RU')">ברוסית</div>
-        <div class=button4 onclick="getData('AR')"> عربيه</div>
+        <button type="button" id="EN" onClick="getData(this.id)"> English</button>
+        <button type="button" id="HE" onClick="getData(this.id)"> עברית</button>
+        <button type="button" id="RU" onClick="getData(this.id)"> ברוסית</button>
+        <button type="button" id="AR" onClick="getData(this.id)"> عربيه</button>
+
     </div>
     <p id="demo">This is a paragraph.</p>
 
