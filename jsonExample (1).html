@@ -10,10 +10,9 @@
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var myObj = JSON.parse(xhttp.response);
-                    if (lang == EN)
-                        document.getElementById("demo").innerHTML = myObj.EN.code;
-                    else
-                        document.getElementById("demo").innerHTML = "NONE";
+
+                    document.getElementById("demo").innerHTML = myObj.lang.code;
+
 
 
                 }
