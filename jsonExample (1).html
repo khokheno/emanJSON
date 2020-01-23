@@ -4,12 +4,21 @@
 <head>
 
     <script>
-        function getData() {
+        function getData(lang) {
+            console.log("here test" + lang)
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var myObj = JSON.parse(xhttp.response);
-                    document.getElementById("demo").innerHTML = myObj.HE.code;
+                    if (lang == 'HE')
+                        document.getElementById("demo").innerHTML = myObj.HE.code;
+                    if (LANG == 'AR')
+                        document.getElementById("demo").innerHTML = myObj.AR.code;
+                    if (LANG == 'EN')
+                        document.getElementById("demo").innerHTML = myObj.EN.code;
+                    if (LANG == 'RU')
+                        document.getElementById("demo").innerHTML = myObj.RU.code;
+
                 }
             };
             xhttp.open("GET", "lang.json", true);
@@ -17,11 +26,85 @@
         }
     </script>
     <title>Json Test</title>
+    <style>
+        html,
+        body {
+            width: auto;
+            height: auto;
+            font-size: 20px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-gap: 10px;
+        }
+        
+        .button1 {
+            text-align: center;
+            box-sizing: border-box;
+            background-color: gray;
+            grid-column-start: 2;
+            grid-row-start: 2;
+            cursor: pointer;
+        }
+        
+        .button2 {
+            text-align: center;
+            background-color: gray;
+            grid-column-start: 2;
+            grid-row-start: 3;
+            cursor: pointer;
+        }
+        
+        .button3 {
+            text-align: center;
+            background-color: gray;
+            grid-column-start: 2;
+            grid-row-start: 4;
+            cursor: pointer;
+        }
+        
+        .button4 {
+            text-align: center;
+            background-color: gray;
+            grid-column-start: 2;
+            grid-row-start: 5;
+            cursor: pointer;
+        }
+        
+        .back {
+            text-align: center;
+            background-color: gray;
+            grid-column-start: 2;
+            grid-row-start: 6;
+            cursor: pointer;
+        }
+        
+        .space {
+            grid-column-start: 2;
+            grid-row-start: 7;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            body {
+                background-color: lightblue;
+                font-size: 1em;
+            }
+        }
+    </style>
 </head>
 
-<body onload="getData()">
+<body>
 
-    <h1>This is a Heading</h1>
+    <h1>This is a Test</h1>
+    <div class="container">
+        <div class=button1 onclick="getData('EN')">English</div>
+        <div class=button2 onclick="getData('HE')">עברית </div>
+        <div class=button3 onclick="getData('RU')">ברוסית</div>
+        <div class=button4 onclick="getData('AR')"> عربيه</div>
+    </div>
     <p id="demo">This is a paragraph.</p>
 
 </body>
