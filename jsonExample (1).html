@@ -10,14 +10,8 @@
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var myObj = JSON.parse(xhttp.response);
-                    if (lang == 'HE')
-                        document.getElementById("demo").innerHTML = myObj.AR.code;
-                    if (LANG == 'AR')
-                        document.getElementById("demo").innerHTML = myObj.AR.code;
-                    if (LANG == 'EN')
-                        document.getElementById("demo").innerHTML = myObj.EN.code;
-                    if (LANG == 'RU')
-                        document.getElementById("demo").innerHTML = myObj.RU.code;
+                    document.getElementById("demo").innerHTML = myObj.AR.code;
+
 
                 }
             };
