@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script>
+        function getData() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    var myObj = JSON.parse(xhttp.response);
+                    document.getElementById("demo").innerHTML = myObj.HE.code;
+                }
+            };
+            xhttp.open("GET", "lang.json", true);
+            xhttp.send();
+        }
+    </script>
+    <title>Json Test</title>
+</head>
+
+<body onload="getData()">
+
+    <h1>This is a Heading</h1>
+    <p id="demo">This is a paragraph.</p>
+
+</body>
+
+</html>
