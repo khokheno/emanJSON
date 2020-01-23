@@ -5,15 +5,23 @@
     <meta charset="utf-8">
     <script>
         function getData(lang) {
+
             console.log("here test" + lang)
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var myObj = JSON.parse(xhttp.response);
-                    document.getElementById("demo").innerHTML = myObj.RU.code;
-                    var obj = myObj.RU;
-                    console.log(obj.UPS);
+                    if (lang == 'EN') {
+                        var obj = myObj.EN;
+                        document.getElementById("demo").innerHTML = obj.code;
 
+                        console.log(obj.UPS);
+                    } else {
+                        var obj = myObj.AR;
+                        document.getElementById("demo").innerHTML = obj.code;
+
+                        console.log(obj.UPS);
+                    }
 
 
 
