@@ -9,29 +9,29 @@
 
     <script>
         function getData(lang) {
-
+            var obj;
             console.log("here test" + lang)
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var myObj = JSON.parse(xhttp.response);
                     if (lang == 'EN') {
-                        var obj = myObj.EN;
+                        obj = myObj.EN;
                         document.getElementById("demo").innerHTML = obj.code;
 
                         console.log(obj.UPS);
                     } else if (lang == 'AR') {
-                        var obj = myObj.AR;
+                        obj = myObj.AR;
                         document.getElementById("demo").innerHTML = obj.code;
 
                         console.log(obj.UPS);
                     } else if (lang == 'HE') {
-                        var obj = myObj.HE;
+                        obj = myObj.HE;
                         document.getElementById("demo").innerHTML = obj.code;
 
                         console.log(obj.UPS);
                     } else if (lang == 'RU') {
-                        var obj = myObj.RU;
+                        obj = myObj.RU;
                         document.getElementById("demo").innerHTML = obj.code;
 
                         console.log(obj.UPS);
@@ -42,15 +42,11 @@
             };
             xhttp.open("GET", "lang.json", true);
             xhttp.send();
-            storeUserDataInSession(obj);
-            window.location = 'page2.html';
-        }
-
-        function storeUserDataInSession(userData) {
-            var userObjectString = JSON.stringify(userData);
-            window.sessionStorage.setItem('userObject', userData);
+            localStorage.setItem("langObj", obj);
+            window.document.location = './page2.html'
         }
     </script>
+
     <style>
         body {
             margin-top: 200px;
