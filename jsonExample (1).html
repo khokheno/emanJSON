@@ -2,7 +2,11 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <title>Self reception</title>
+
     <script>
         function getData(lang) {
 
@@ -38,23 +42,120 @@
             };
             xhttp.open("GET", "lang.json", true);
             xhttp.send();
+            storeUserDataInSession(obj);
+            window.location = 'page2.html';
+        }
+
+        function storeUserDataInSession(userData) {
+            var userObjectString = JSON.stringify(userData);
+            window.sessionStorage.setItem('userObject', userData);
         }
     </script>
-    <title>Json Test</title>
-
+    <style>
+        body {
+            margin-top: 200px;
+            width: auto;
+            height: 50%;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        .HEbutton {
+            top: 315px;
+            left: 160px;
+            height: 50%;
+            text-align: center;
+            font: Regular 24px/23px Assistant;
+            letter-spacing: 0;
+            color: #FFFFFF;
+            opacity: 1;
+            background-color: Transparent;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            outline: none;
+        }
+        
+        .ARbutton {
+            top: 368px;
+            left: 162px;
+            height: 50%;
+            text-align: center;
+            font: Regular 24px/23px Assistant;
+            letter-spacing: 0;
+            color: #FFFFFF;
+            opacity: 1;
+            background-color: Transparent;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            outline: none;
+        }
+        
+        .ENbutton {
+            top: 420px;
+            left: 152px;
+            height: 50%;
+            text-align: center;
+            font: Regular 24px/23px Assistant;
+            letter-spacing: 0;
+            color: #FFFFFF;
+            opacity: 1;
+            background-color: Transparent;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            outline: none;
+        }
+        
+        .RUbutton {
+            top: 472px;
+            left: 144px;
+            height: 50%;
+            text-align: center;
+            font: Regular 24px/23px Assistant;
+            letter-spacing: 0;
+            color: #FFFFFF;
+            opacity: 1;
+            background-color: Transparent;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            outline: none;
+        }
+        
+        @media only screen and (max-width: 576px) {
+            body {
+                background-color: lightblue;
+                font-size: 1em;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body style="background-color:teal; ">
 
-    <h1>This is a Test</h1>
-    <div class="container">
-        <button type="button" id="EN" onClick="getData(this.id)"> English</button>
-        <button type="button" id="HE" onClick="getData(this.id)"> עברית</button>
-        <button type="button" id="RU" onClick="getData(this.id)"> ברוסית</button>
-        <button type="button" id="AR" onClick="getData(this.id)"> عربيه</button>
+    <div class="text-center">
+        <button type="button" class="HEbutton" id="HE" onClick="getData(this.id)"> עברית </button>
+        <br>
+        <br>
+
+        <button type="button" class="ARbutton" id="AR" onClick="getData(this.id)"> عربيه</button>
+        <br>
+        <br>
+
+        <button type="button" class="ENbutton" id="EN" onClick="getData(this.id)"> English</button>
+        <br>
+        <br>
+
+        <button type="button" class="RUbutton" id="RU" onClick="getData(this.id)"> русский</button>
+
 
     </div>
-    <p id="demo">This is a paragraph.</p>
 
 </body>
 
