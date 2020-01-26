@@ -9,29 +9,36 @@
 
     <script>
         function getData(lang) {
-            var obj;
             console.log("here test" + lang)
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var myObj = JSON.parse(xhttp.response);
                     if (lang == 'EN') {
-                        obj = myObj.EN;
+                        var obj = myObj.EN;
+                        localStorage.setItem("langObj", JSON.stringify(obj));
+                        window.document.location = './page2.html'
                         document.getElementById("demo").innerHTML = obj.code;
 
                         console.log(obj.UPS);
                     } else if (lang == 'AR') {
-                        obj = myObj.AR;
+                        var obj = myObj.AR;
+                        localStorage.setItem("langObj", JSON.stringify(obj));
+                        window.document.location = './page2.html'
                         document.getElementById("demo").innerHTML = obj.code;
 
                         console.log(obj.UPS);
                     } else if (lang == 'HE') {
-                        obj = myObj.HE;
+                        var obj = myObj.HE;
+                        localStorage.setItem("langObj", JSON.stringify(obj));
+                        window.document.location = './page2.html'
                         document.getElementById("demo").innerHTML = obj.code;
 
                         console.log(obj.UPS);
                     } else if (lang == 'RU') {
-                        obj = myObj.RU;
+                        var obj = myObj.RU;
+                        localStorage.setItem("langObj", JSON.stringify(obj));
+                        window.document.location = './page2.html'
                         document.getElementById("demo").innerHTML = obj.code;
 
                         console.log(obj.UPS);
@@ -42,8 +49,7 @@
             };
             xhttp.open("GET", "lang.json", true);
             xhttp.send();
-            localStorage.setItem("langObj", obj);
-            window.document.location = './page2.html'
+
         }
     </script>
 
