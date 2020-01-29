@@ -1,0 +1,132 @@
+body, html {
+
+  height: 100%;
+  background-image: url("bg2.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  /* background-color:#4AA8e8; */
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("bg2.png");
+  /* Full height */
+  width: auto;
+  height: auto;
+  position:absolute;
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  margin-left: 0;
+  margin-right: 0;
+
+}
+
+.img{
+  background-image: url("self.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100px;
+  top:30px;
+  position: relative;
+  margin-left: 0;
+  padding: 0;
+}
+
+.HEbutton {
+  color: white;
+  font-size: xx-large;
+  background-color: #ff0000b3;
+  box-shadow: inset 1px 0px 14px 4px;
+    top: 315px;
+    left: 160px;
+    height: 50%;
+    text-align: center;
+    font: Regular 24px/23px Assistant;
+    letter-spacing: 0;
+    color: #ffffff;
+    opacity: 1;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.ARbutton {
+  color: white;
+  font-size: xx-large;
+  background-color: #ff0000b3;
+  box-shadow: inset 1px 0px 14px 4px;
+    top: 368px;
+    left: 162px;
+    height: 50%;
+    text-align: center;
+    font: Regular 24px/23px Assistant;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 2;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.ENbutton {
+  color: white;
+  font-size: xx-large;
+  background-color: #ff0000b3;
+  box-shadow: inset 1px 0px 14px 4px;
+    top: 420px;
+    left: 152px;
+    height: 50%;
+    text-align: center;
+    font: Regular 24px/23px Assistant;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 1;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.RUbutton {
+  color: white;
+  font-size: xx-large;
+  background-color: #ff0000b3;
+  box-shadow: inset 1px 0px 14px 4px;
+    top: 472px;
+    left: 144px;
+    height: 50%;
+    text-align: center;
+    font: Regular 24px/23px Assistant;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 1;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+@media only screen and (max-width: 576px) {
+    body {
+        background-color: lightblue;
+        font-size: 1em;
+    }
+}
+.text-center {
+    margin-top: 200px;
+}

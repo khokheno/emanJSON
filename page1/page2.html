@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var lang = localStorage.getItem("langObj");
+        var langugeObj = JSON.parse(lang)
+        console.log("e " + langugeObj.code)
+        document.getElementById("d").innerHTML = langugeObj.code;
+    </script>
+    <title>page 2</title>
+</head>
+
+<body>
+
+    <div id="d">eman</div>
+</body>
+
+</html>
